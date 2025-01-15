@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Daffa Abiyyu - AI & Robotics Engineer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+        }
+
+        :root {
+            --space-dark: #0a0a2a;
+            --space-light: #6e44ff;
+            --neon-blue: #4cc9f0;
+            --neon-purple: #7b2cbf;
+            --star-color: #ffffff;
+            --text-color: #e2e8f0;
+        }
+
+        body {
+            background-color: var(--space-dark);
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Star Background Animation */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, var(--star-color), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, var(--star-color), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50px 160px, var(--star-color), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, var(--star-color), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 130px 80px, var(--star-color), rgba(0,0,0,0));
+            background-repeat: repeat;
+            animation: moveStars 100s linear infinite;
+        }
+
+        @keyframes moveStars {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100%); }
+        }
+
+        /* Header Styles */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(45deg, rgba(10,10,42,0.9), rgba(123,44,191,0.3));
+            overflow: hidden;
+        }
+
+        .orbital-ring {
+            position: absolute;
+            border: 2px solid rgba(76,201,240,0.3);
+            border-radius: 50%;
+            animation: rotate 20s linear infinite;
+        }
+
+        .ring-1 { width: 300px; height: 300px; }
+        .ring-2 { width: 500px; height: 500px; animation-direction: reverse; }
+        .ring-3 { width: 700px; height: 700px; }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid var(--neon-blue);
+            box-shadow: 0 0 20px var(--neon-blue);
+            animation: glowPulse 3s infinite;
+            z-index: 1;
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 20px var(--neon-blue); }
+            50% { box-shadow: 0 0 40px var(--neon-blue); }
+            100% { box-shadow: 0 0 20px var(--neon-blue); }
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 1.5rem 0;
+            color: var(--star-color);
+            text-shadow: 0 0 10px var(--neon-blue);
+            z-index: 1;
+        }
+
+        header p {
+            color: var(--text-color);
+            font-size: 1.3rem;
+            z-index: 1;
+            text-shadow: 0 0 5px var(--neon-blue);
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(10,10,42,0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--neon-blue);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--neon-blue);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        nav a:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--neon-blue);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* Cards */
+        .skill-card, .project-card, .experience-card {
+            background: rgba(110,68,255,0.1);
+            border: 1px solid var(--neon-blue);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(5px);
+            transition: all 0.4s ease;
+        }
+
+        .skill-card:hover, .project-card:hover, .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(76,201,240,0.3);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card i {
+            color: var(--neon-blue);
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* Project Links */
+        .project-links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--neon-blue);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .project-links a:hover {
+            background: var(--neon-blue);
+            color: var(--space-dark);
+            box-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        /* Contact Section */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: rgba(110,68,255,0.1);
+            border: 1px solid var(--neon-blue);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .contact-links a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px var(--neon-blue);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(45deg, var(--space-dark), var(--neon-purple));
+            color: var(--text-color);
+            text-align: center;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            margin: 0 1rem;
+            font-size: 1.8rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .orbital-ring {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <header>
+        <div class="orbital-ring ring-1"></div>
+        <div class="orbital-ring ring-2"></div>
+        <div class="orbital-ring ring-3"></div>
+        <img src="images/wajah.jpg" alt="Ahmad Daffa Abiyyu" class="profile-img">
+        <h1>Ahmad Daffa Abiyyu</h1>
+        <p>AI and Robotics Engineer</p>
+        <p>ahmad.daffa.abiyyu@ftmm.unair.ac.id</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>Merupakan mahasiswa S1 Teknik Robotka dan Kecerdasan Buatan angkatan 2022 di Universitas Airlangga. Memiliki jiwa ambisius, dapat diandalkan, memiliki tanggung jawab tinggi, dan selalu senang membantu. Memiliki ketertarikan di bidang kecerdasan buatan dan robotika. Mampu membalas pesan dengan cepat.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-robot fa-3x"></i>
+                    <h3>Robotics</h3>
+                    <p>Arduino, Robot Programming, Sensors Integration</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-brain fa-3x"></i>
+                    <h3>AI & Data Science</h3>
+                    <p>Python, Machine Learning, Data Analysis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Chat PDT</h3>
+                    <p>Membuat AI yang mempunyai basis pengetahuan dari PDT (Pedoman Diagnosa dan Terapi) untuk klinik dokter niam. Chat ini menggunakan teknologi gemini dengan token input yang lebih dari 100k dengan output token sebesar 2048. Chat PDT mempunyai ilmu tentang THT (Telinga Hidung Tenggorokan), pediatri, kardiologi.</p>
+                    <div class="project-links">
+                        <a href="https://drniam.com/tht/" target="_blank">THT</a>
+                        <a href="https://drniam.com/pediatri2/" target="_blank">Pediatri</a>
+                        <a href="https://drniam.com/cardio/" target="_blank">Cardio</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Dr Niam Chat</h3>
+                    <p>Membuat virtual asisten yang digunakan pasien untuk mendaftar dan bertanya-tanya tentang klinik dokter niam. Chat ini juga menggunakan teknologi gemini dengan token input yang lebih dari 100k dengan output token sebesar 2048.</p>
+                    <div class="project-links">
+                        <a href="https://drniam.com/chat/" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Stock App</h3>
+                    <p>Mengembangkan aplikasi web yang memungkinkan pengguna melihat keadaan stok perusahaan besar seperti Google, Nvidia, Tesla, dan Apple menggunakan Streamlit.</p>
+                    <div class="project-links">
+                        <a href="https://simplestockpriceapp-xvdnvgnr9brgsuj7ywfcom.streamlit.app/" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Robot Projects</h3>
+                    <p>- Robot Line Follower: Robot dengan algoritma pengenalan jalur otomatis<br>
+                       - IOT untuk Cuaca: Sistem IOT real-time untuk monitoring cuaca<br>
+                       - Robot Antar Barang: Robot otomatis untuk pengangkutan barang</p>
+                    <div class="project-links">
+                        <a href="https://www.youtube.com/watch?v=OoxDC3Rb9Mg" target="_blank">Line Follower</a>
+                        <a href="https://www.youtube.com/shorts/9rYEqVN1_1A" target="_blank">IOT Cuaca</a>
+                        <a href="https://youtu.be/T1UXq5FLqxg" target="_blank">Robot Antar Barang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-card">
+                <h3>Google Developer Groups on Campus</h3>
+                <p>PIC AI and Machine Learning (2024 - Present)</p>
+                <p>Membangun dan mengajar kurikulum pembelajaran AI dan machine learning yang mebantu puluhan member belajar AI dan Machine learning</p>
+                <div class="project-links">
+                    <a href="https://gdg.community.dev/gdg-on-campus-universitas-airlangga-surabaya-indonesia/" target="_blank">Chapter Link</a>
+                    <a href="https://gdg.community.dev/u/mj7vu8/#/about" target="_blank">My GDG Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Connect With Me</h2>
+            <div class="contact-links">
+                <a href="https://www.kaggle.com/ahmaddaffaabiyyu" target="_blank">
+                    <i class="fab fa-kaggle"></i> Kaggle
+                </a>
+                <a href="https://github.com/yweslakarep123" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://huggingface.co/yweslakarep" target="_blank">
+                    <i class="fas fa-robot"></i> Hugging Face
+                </a>
+                <a href="https://www.linkedin.com/in/ahmad-daffa-abiyyu-496a94293/" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Ahmad Daffa Abiyyu. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Add animation to skill cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.skill-card, .project-card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.5s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
