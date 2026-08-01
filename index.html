@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -179,7 +179,7 @@
         }
 
         /* Cards */
-        .skill-card, .project-card, .experience-card {
+        .skill-card, .project-card, .experience-card, .education-card {
             background: rgba(110,68,255,0.1);
             border: 1px solid var(--neon-blue);
             border-radius: 15px;
@@ -189,9 +189,79 @@
             transition: all 0.4s ease;
         }
 
-        .skill-card:hover, .project-card:hover, .experience-card:hover {
+        .skill-card:hover, .project-card:hover, .experience-card:hover, .education-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 0 30px rgba(76,201,240,0.3);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.15rem;
+        }
+
+        .experience-card h3,
+        .education-card h3,
+        .skill-card h3,
+        .project-card h3 {
+            color: var(--star-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .role-meta {
+            color: var(--neon-blue);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-card ul {
+            margin-left: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-card li {
+            margin-bottom: 0.6rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .skill-card li {
+            margin-bottom: 0.5rem;
+            padding-left: 0.2rem;
+        }
+
+        .skill-level {
+            color: var(--neon-blue);
+            font-size: 0.9rem;
+        }
+
+        .cta-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            z-index: 1;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cta-links a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            padding: 0.7rem 1.6rem;
+            border: 1px solid var(--neon-blue);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .cta-links a:hover {
+            background: var(--neon-blue);
+            color: var(--space-dark);
+            box-shadow: 0 0 15px var(--neon-blue);
         }
 
         /* Skills Grid */
@@ -311,15 +381,21 @@
         <img src="images/wajah.jpg" alt="Ahmad Daffa Abiyyu" class="profile-img">
         <h1>Ahmad Daffa Abiyyu</h1>
         <p>AI and Robotics Engineer</p>
-        <p>ahmad.daffa.abiyyu@ftmm.unair.ac.id</p>
+        <p>Surabaya, Indonesia</p>
+        <p>daffa102008@gmail.com · +62 819-3832-2177</p>
+        <div class="cta-links">
+            <a href="CV_indo.pdf" target="_blank">Download CV</a>
+            <a href="#contact">Contact Me</a>
+        </div>
     </header>
 
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -328,7 +404,69 @@
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
-                <p>Merupakan mahasiswa S1 Teknik Robotka dan Kecerdasan Buatan angkatan 2022 di Universitas Airlangga. Memiliki jiwa ambisius, dapat diandalkan, memiliki tanggung jawab tinggi, dan selalu senang membantu. Memiliki ketertarikan di bidang kecerdasan buatan dan robotika. Mampu membalas pesan dengan cepat.</p>
+                <p>Seorang mahasiswa S1 Teknik Robotika dan Kecerdasan Buatan dari Universitas Airlangga yang suka memperumit segalanya. Aktif dalam proyek penelitian dan pengembangan terkait sistem robotika terintegrasi. Saat ini tertarik pada pemodelan generatif untuk robotika dan analisis data.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+
+            <div class="experience-card">
+                <h3>Internship Badan Meteorologi, Klimatologi, dan Geofisika (BMKG)</h3>
+                <p class="role-meta">Observasi dan Forecaster · September 2025 – Desember 2025</p>
+                <ul>
+                    <li>Mengumpulkan data per jam mengenai suhu, tutupan awan, arah angin, dan kecepatan angin di Jawa Timur, kemudian mengunggahnya ke server BMKG untuk distribusi global.</li>
+                    <li>Mengembangkan prototipe robot terbang untuk mengukur suhu di perairan besar dengan sedimentasi tanah minimal.</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://youtube.com/shorts/tkCDW6fNoQQ" target="_blank">Demo Robot Terbang</a>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <h3>Asisten Lab, Teknik Robotika dan Kecerdasan Buatan — Universitas Airlangga</h3>
+                <p class="role-meta">Asisten Lab Praktikum Machine Learning · Agustus 2025 – Desember 2025</p>
+                <ul>
+                    <li>Mengajar dan membimbing mahasiswa semester 5 dalam memahami konsep analisis data dan pembelajaran mesin.</li>
+                    <li>Melaksanakan proyek penelitian dosen tentang klasifikasi kondisi motor BLDC menggunakan sensor akustik, suhu, dan arus.</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://www.youtube.com/playlist?list=PLTogtNeP0g5qYX0xA81cw-pLSEWObpOvi" target="_blank">Playlist Praktikum</a>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <h3>Innovative Research Intelligence System (IRIS) — Universitas Airlangga</h3>
+                <p class="role-meta">Researcher · Februari 2025 – November 2025</p>
+                <ul>
+                    <li>Melakukan penelitian menggunakan data sumber terbuka dan web scraping untuk mengidentifikasi masalah, mengungkap akar penyebab, dan mengusulkan solusi berbasis data.</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <h3>Google Developer Groups on Campus (GDGoC) — Universitas Airlangga</h3>
+                <p class="role-meta">PIC Artificial Intelligence & Machine Learning · Oktober 2024 – Februari 2025</p>
+                <ul>
+                    <li>Merancang dan menyelenggarakan sesi pelatihan serta lokakarya untuk meningkatkan keterampilan kecerdasan buatan anggota komunitas.</li>
+                    <li>Mengembangkan kurikulum pembelajaran AI/ML bagi anggota komunitas untuk dipelajari dan diimplementasikan.</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://www.youtube.com/watch?v=SvwWAVqygfA" target="_blank">Workshop Session</a>
+                    <a href="https://gdg.community.dev/gdg-on-campus-universitas-airlangga-surabaya-indonesia/" target="_blank">Chapter Link</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-card">
+                <h3>Universitas Airlangga</h3>
+                <p class="role-meta">2022 – Saat ini</p>
+                <p>S1 Teknik Robotika dan Kecerdasan Buatan</p>
             </div>
         </div>
     </section>
@@ -338,14 +476,54 @@
             <h2>Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <i class="fas fa-robot fa-3x"></i>
-                    <h3>Robotics</h3>
-                    <p>Arduino, Robot Programming, Sensors Integration</p>
+                    <i class="fas fa-code fa-3x"></i>
+                    <h3>Programming & Tools</h3>
+                    <ul>
+                        <li>Python <span class="skill-level">(Advanced)</span></li>
+                        <li>C/C++ <span class="skill-level">(Intermediate)</span></li>
+                        <li>Arduino IDE <span class="skill-level">(Intermediate)</span></li>
+                        <li>Microsoft Office Suite <span class="skill-level">(Basic)</span></li>
+                    </ul>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-brain fa-3x"></i>
-                    <h3>AI & Data Science</h3>
-                    <p>Python, Machine Learning, Data Analysis</p>
+                    <h3>Data & AI</h3>
+                    <ul>
+                        <li>Data Manipulation: Pandas, NumPy</li>
+                        <li>Machine Learning: Scikit-learn</li>
+                        <li>Deep Learning: TensorFlow, Keras, PyTorch</li>
+                        <li>Data Visualization: Matplotlib, Seaborn</li>
+                        <li>Image Classification Workflow</li>
+                        <li>LLM: API Integration, Training, Distillation</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-drafting-compass fa-3x"></i>
+                    <h3>CAD & Tools</h3>
+                    <ul>
+                        <li>Autodesk Inventor <span class="skill-level">(Intermediate)</span></li>
+                        <li>SolidWorks <span class="skill-level">(Intermediate)</span></li>
+                        <li>EasyEDA <span class="skill-level">(Intermediate)</span></li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-users fa-3x"></i>
+                    <h3>Professional & Soft Skills</h3>
+                    <ul>
+                        <li>Team management</li>
+                        <li>Responsibility</li>
+                        <li>Fast response</li>
+                        <li>Time management</li>
+                        <li>Adaptability</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-language fa-3x"></i>
+                    <h3>Language</h3>
+                    <ul>
+                        <li>Indonesian <span class="skill-level">(Native)</span></li>
+                        <li>English <span class="skill-level">(Intermediate)</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -354,11 +532,31 @@
     <section id="projects">
         <div class="container">
             <h2>Projects</h2>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Prototipe Robot Terbang — BMKG</h3>
+                    <p>Mengembangkan prototipe robot terbang untuk mengukur suhu di perairan besar dengan sedimentasi tanah minimal, sebagai bagian dari magang Observasi dan Forecaster di BMKG.</p>
+                    <div class="project-links">
+                        <a href="https://youtube.com/shorts/tkCDW6fNoQQ" target="_blank">View Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Klasifikasi Kondisi Motor BLDC</h3>
+                    <p>Proyek penelitian dosen tentang klasifikasi kondisi motor BLDC menggunakan sensor akustik, suhu, dan arus, dikerjakan bersama sebagai Asisten Lab Praktikum Machine Learning.</p>
+                    <div class="project-links">
+                        <a href="https://www.youtube.com/playlist?list=PLTogtNeP0g5qYX0xA81cw-pLSEWObpOvi" target="_blank">View Playlist</a>
+                    </div>
+                </div>
+            </div>
             
             <div class="project-card">
                 <div class="project-content">
                     <h3>HidupKu (GEMASTIK)</h3>
-                    <p>Projek lomba GEMASTIK yang berisi chatbot konsultan kesehatan, perekomendasian obat bebas, dan pencarian fasilitas kesehatan terdekat. Aplikasi ini membantu masyarakat untuk mendapatkan konsultasi kesehatan dan informasi fasilitas medis dengan mudah.</p>
+                    <p>Proyek lomba GEMASTIK yang berisi chatbot konsultan kesehatan, rekomendasi obat bebas, dan pencarian fasilitas kesehatan terdekat.</p>
                     <div class="project-links">
                         <a href="https://www.youtube.com/watch?v=jpthzoOpYRA&feature=youtu.be" target="_blank">View Demo</a>
                     </div>
@@ -368,7 +566,7 @@
             <div class="project-card">
                 <div class="project-content">
                     <h3>Dr Niam Chat</h3>
-                    <p>Membangun chatbot konsultan kesehatan dimana user bisa mengonsultasi penyakit yang dia punya. Sistem ini memberikan saran kesehatan awal dan membantu pengguna memahami kondisi kesehatan mereka.</p>
+                    <p>Chatbot konsultan kesehatan yang memungkinkan pengguna mengonsultasikan penyakit dan mendapatkan saran kesehatan awal.</p>
                     <div class="project-links">
                         <a href="https://www.haidok.com/" target="_blank">View Project</a>
                     </div>
@@ -378,25 +576,10 @@
             <div class="project-card">
                 <div class="project-content">
                     <h3>Chatbot FTMM</h3>
-                    <p>Membangun chatbot untuk membantu mahasiswa FTMM dalam melihat berita terbaru. Chatbot ini menyediakan informasi terkini seputar kegiatan dan pengumuman fakultas secara real-time.</p>
+                    <p>Chatbot untuk membantu mahasiswa FTMM melihat berita terbaru serta informasi kegiatan dan pengumuman fakultas secara real-time.</p>
                     <div class="project-links">
                         <a href="https://chatftmm-fe-production-447e.up.railway.app/" target="_blank">View Project</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="experience-card">
-                <h3>Google Developer Groups on Campus</h3>
-                <p>PIC AI and Machine Learning (2024 - Present)</p>
-                <p>Membangun dan mengajar kurikulum pembelajaran AI dan machine learning yang mebantu puluhan member belajar AI dan Machine learning</p>
-                <div class="project-links">
-                    <a href="https://gdg.community.dev/gdg-on-campus-universitas-airlangga-surabaya-indonesia/" target="_blank">Chapter Link</a>
-                    <a href="https://gdg.community.dev/u/mj7vu8/#/about" target="_blank">My GDG Profile</a>
                 </div>
             </div>
         </div>
@@ -406,24 +589,33 @@
         <div class="container">
             <h2>Connect With Me</h2>
             <div class="contact-links">
-                <a href="https://www.kaggle.com/ahmaddaffaabiyyu" target="_blank">
-                    <i class="fab fa-kaggle"></i> Kaggle
+                <a href="mailto:daffa102008@gmail.com">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="tel:+6281938322177">
+                    <i class="fas fa-phone"></i> Phone
                 </a>
                 <a href="https://github.com/yweslakarep123" target="_blank">
                     <i class="fab fa-github"></i> GitHub
                 </a>
+                <a href="https://www.linkedin.com/in/ahmadaffabiyyu/" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://www.kaggle.com/ahmaddaffaabiyyu" target="_blank">
+                    <i class="fab fa-kaggle"></i> Kaggle
+                </a>
                 <a href="https://huggingface.co/yweslakarep" target="_blank">
                     <i class="fas fa-robot"></i> Hugging Face
                 </a>
-                <a href="https://www.linkedin.com/in/ahmad-daffa-abiyyu-496a94293/" target="_blank">
-                    <i class="fab fa-linkedin"></i> LinkedIn
+                <a href="CV_indo.pdf" target="_blank">
+                    <i class="fas fa-file-pdf"></i> Download CV
                 </a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Ahmad Daffa Abiyyu. All rights reserved.</p>
+        <p>&copy; 2026 Ahmad Daffa Abiyyu. All rights reserved.</p>
     </footer>
 
     <script>
@@ -436,7 +628,7 @@
             });
         });
 
-        // Add animation to skill cards on scroll
+        // Add animation to cards on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -446,7 +638,7 @@
             });
         });
 
-        document.querySelectorAll('.skill-card, .project-card').forEach(card => {
+        document.querySelectorAll('.skill-card, .project-card, .experience-card, .education-card').forEach(card => {
             card.style.opacity = 0;
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'all 0.5s ease-out';
